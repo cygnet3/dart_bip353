@@ -4,11 +4,13 @@ class Bip353DnsResolveResponse extends Equatable {
   final String? onchain;
   final String? offer;
   final String? lnurl;
+  final String? silentpayment;
 
   Bip353DnsResolveResponse({
     required this.onchain,
     required this.offer,
     required this.lnurl,
+    required this.silentpayment,
   });
 
   @override
@@ -16,6 +18,7 @@ class Bip353DnsResolveResponse extends Equatable {
         onchain,
         offer,
         lnurl,
+        silentpayment,
       ];
 
   factory Bip353DnsResolveResponse.fromRawQueryData(String data) {
@@ -59,6 +62,7 @@ class Bip353DnsResolveResponse extends Equatable {
       onchain: addressOnly,
       offer: asUriQueries["lno"],
       lnurl: asUriQueries["lnurl"],
+      silentpayment: asUriQueries["sp"],
     );
   }
 }
