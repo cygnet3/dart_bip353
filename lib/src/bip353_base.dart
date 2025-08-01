@@ -10,6 +10,11 @@ class Bip353 {
     String address,
   ) async {
     try {
+      // ignore leading '₿' if present
+      if (address.startsWith('₿')) {
+        address = address.substring(1);
+      }
+
       final split = address.split("@");
 
       if (split.length != 2) {
