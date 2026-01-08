@@ -5,12 +5,14 @@ class Bip353DnsResolveResponse extends Equatable {
   final String? offer;
   final String? lnurl;
   final String? silentpayment;
+  final String? testsilentpayment;
 
   Bip353DnsResolveResponse({
     required this.onchain,
     required this.offer,
     required this.lnurl,
     required this.silentpayment,
+    required this.testsilentpayment,
   });
 
   @override
@@ -63,6 +65,7 @@ class Bip353DnsResolveResponse extends Equatable {
       offer: asUriQueries["lno"],
       lnurl: asUriQueries["lnurl"],
       silentpayment: asUriQueries["sp"],
+      testsilentpayment: asUriQueries["tsp"],
     );
   }
 }
